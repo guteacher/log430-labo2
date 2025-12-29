@@ -35,7 +35,7 @@ ports:
 > > 📝 **NOTE 2** : Si, à tout moment, vous décidez d'exécuter l'application sur votre machine hôte plutôt que sur Docker, veillez à arrêter au préalable le service `store_manager` dans Docker. Sinon, votre application ne fonctionnera pas car le port 5000 est déjà occupé.
 
 ### 4. Préparez l’environnement de développement
-Suivez les mêmes étapes que dans le laboratoire 01.
+Suivez les mêmes étapes que dans le laboratoire 01. Créez un réseau `labo02-network`.
 
 ### 5. Observez l'implementation des concepts DDD dans le projet
 Dans l'application de gestion de magasin, nous retrouvons l’implémentation de plusieurs concepts clés du DDD que nous devons comprendre avant de commencer les activités :
