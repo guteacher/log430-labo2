@@ -17,11 +17,9 @@ Dans ce laboratoire, nous continuerons à développer l'application de gestion d
 ### 1. Clonez le dépôt
 Créez votre propre dépôt à partir du dépôt gabarit (template). Vous pouvez modifier la visibilité pour la rendre privée si vous voulez.
 ```bash
-git clone https://github.com/guteacher/log430-a25-labo2
-cd log430-a25-labo2
+git clone https://github.com/[votrenom]/log430-labo2
+cd log430-labo2
 ```
-
-Ensuite, clonez votre dépôt sur votre ordinateur et sur votre serveur de déploiement (ex. VM). **Veillez à ne pas cloner le dépôt d'origine**.
 
 ### 2. Créez un fichier .env
 Créez un fichier `.env` basé sur `.env.example`. Dans le fichier `.env`, utilisez les mêmes identifiants que ceux mentionnés dans `docker-compose.yml`. Veuillez suivre la même approche que pour le laboratoire 01.
@@ -37,13 +35,9 @@ ports:
 > > 📝 **NOTE 2** : Si, à tout moment, vous décidez d'exécuter l'application sur votre machine hôte plutôt que sur Docker, veillez à arrêter au préalable le service `store_manager` dans Docker. Sinon, votre application ne fonctionnera pas car le port 5000 est déjà occupé.
 
 ### 4. Préparez l’environnement de développement
-Suivez les mêmes étapes que dans le laboratoire 01. La seule différence est que vous démarrerez le conteneur Docker en mode **non interactif**. Il s'agit d'une application Web, nous n'avons donc pas besoin d'interagir via la ligne de commande avec l'application.
-```bash
-docker compose build
-docker compose up -d
-```
+Suivez les mêmes étapes que dans le laboratoire 01.
 
-### 5. Observez l'implementation du DDD
+### 5. Observez l'implementation des concepts DDD dans le projet
 Dans l'application de gestion de magasin, nous retrouvons l’implémentation de plusieurs concepts clés du DDD que nous devons comprendre avant de commencer les activités :
 
 - **Ubiquitous Language** : Les mêmes noms d'entités sont utilisés à la fois par les développeurs et les experts du domaine. Par exemple, des noms tels que Commande/Order, Article/Product, Utilisateur/User apparaissent à la fois dans la documentation, les diagrammes et le code.
@@ -56,8 +50,6 @@ Dans l'application de gestion de magasin, nous retrouvons l’implémentation de
 
 Dans le cadre des activités, nous n'implémenterons pas directement les concepts DDD, mais nous utiliserons des modules qui les implémentent déjà, tels que `write_order.py`.
 
-### 6. Préparez l’environnement de déploiement et le pipeline CI/CD
-Utilisez les mêmes approches qui ont été abordées lors des laboratoires 00 et 01.
 
 ## 🧪 Activités pratiques
 
@@ -105,14 +97,11 @@ r.incr("product:123", 1)
 Des tests unitaires sont inclus dans le dépôt. Pour les exécuter :
 
 ```bash
-python3 -m pytest
+pytest
 ```
 
 Si tous les tests passent ✅, vos implémentations sont correctes.
 
 ## 📦 Livrables
 - Un fichier .zip contenant l’intégralité du code source du projet Labo 02.
-- Une vidéo expliquant les principales observations, décisions et défis/difficultés/problèmes rencontrés durant l'étape 1.
-    - Exigences : Maximum 5 minutes, format .mp4 ou .webm. 
-    - Veuillez utiliser un outil tel que [Handbrake](https://handbrake.fr/) pour compresser la vidéo si elle dépasse 20 Mo.
 - Un rapport en .pdf répondant aux 5 questions présentées dans ce document. Il est obligatoire d’illustrer vos réponses avec du code ou des captures de terminal.
