@@ -3,14 +3,16 @@ services:
     build: .
     volumes:
       - .:/app
-    depends_on:
-      - mysql
-      - redis
     networks:
       - labo02-network
-
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      
   mysql:
-    image: mysql:8
+    image: mysql:8.4.7
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -24,6 +26,12 @@ services:
       - ./db-init:/docker-entrypoint-initdb.d
     networks:
       - labo02-network
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -proot"]
+      interval: 1m
+      timeout: 10s
+      retries: 5
+      start_period: 10s
 
   redis:
     image: redis:7
@@ -32,6 +40,12 @@ services:
       - "6379:6379"
     networks:
       - labo02-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 1m
+      timeout: 10s
+      retries: 5
+      start_period: 10s
 
 networks:
   labo02-network:
