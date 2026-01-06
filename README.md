@@ -15,7 +15,7 @@ Dans ce laboratoire, nous continuerons à développer l'application de gestion d
 > ⚠️ IMPORTANT : Avant de commencer le setup et les activités, veuillez lire la documentation architecturale dans le répertoire `/docs/arc42/docs.pdf`.
 
 ### 1. Clonez le dépôt
-Créez votre propre dépôt à partir du dépôt gabarit (template). Vous pouvez modifier la visibilité pour la rendre privée si vous voulez.
+
 ```bash
 git clone https://github.com/[votrenom]/log430-labo2
 cd log430-labo2
