@@ -17,7 +17,7 @@ Dans ce laboratoire, nous continuerons à développer l'application de gestion d
 ### 1. Clonez le dépôt
 
 ```bash
-git clone https://github.com/[votrenom]/log430-labo2
+git clone < lien à votre dépôt GitHub >
 cd log430-labo2
 ```
 
